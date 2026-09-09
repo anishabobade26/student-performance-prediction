@@ -38,8 +38,8 @@ flowchart TB
 
     UI --> Axios
     Axios --> Nginx
-    Nginx -->|/api/*| Router
-    Nginx -->|/*| UI
+    Nginx -->|"REST API (/api/v1)"| Router
+    Nginx -->|"SPA Web Routing"| UI
 
     Router --> Service
     Service --> Repo

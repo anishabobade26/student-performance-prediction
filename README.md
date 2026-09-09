@@ -100,9 +100,9 @@ flowchart TB
         ModelStorage[("Saved Model Artifacts (.joblib & metrics.json)")]
     end
 
-    UI -->|Axios REST Client| Nginx
-    Nginx -->|/api/v1/*| Routers
-    Nginx -->|/* (SPA Routing)| UI
+    UI -->|"HTTP Client (Axios)"| Nginx
+    Nginx -->|"API Requests (/api/v1)"| Routers
+    Nginx -->|"Frontend Routes (SPA)"| UI
 
     Routers --> Security
     Security --> Services
