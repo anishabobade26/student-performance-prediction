@@ -1,0 +1,137 @@
+import React from 'react';
+import { PredictionResult } from '../../types';
+import { X, Printer, Download, FileText, CheckCircle2 } from 'lucide-react';
+
+interface ExportModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  result: PredictionResult;
+}
+
+export const ExportModal: React.FC<ExportModalProps> = ({ isOpen, onClose, result }) => {
+  if (!isOpen) return null;
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  const handleDownloadJSON = () => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(result, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `student_ai_forecast_${result.prediction_id || 'result'}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div className="relative w-full max-w-2xl bg-slate-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+        
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b border-white/10 bg-slate-950/60">
+          <div className="flex items-center gap-2.5">
+            <div className="p-2 rounded-lg bg-brand-600/20 text-brand-400">
+              <FileText className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="font-display font-bold text-lg text-white">Student AI Diagnostic Report</h3>
+              <p className="text-xs text-slate-400">Export or print candidate evaluation summary</p>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Printable Document Body */}
+        <div className="p-6 overflow-y-auto space-y-6 text-slate-100 print:text-black" id="printable-report">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5">
+            <div>
+              <span className="text-[11px] text-slate-400 uppercase font-semibold">Predicted Grade</span>
+              <div className="text-2xl font-display font-extrabold text-brand-400">
+                {result.predicted_g3} / 20
+              </div>
+            </div>
+            <div>
+              <span className="text-[11px] text-slate-400 uppercase font-semibold">Outcome</span>
+              <div className="text-2xl font-display font-extrabold text-emerald-400">
+                {result.pass_fail}
+              </div>
+            </div>
+            <div>
+              <span className="text-[11px] text-slate-400 uppercase font-semibold">Risk Tier</span>
+              <div className="text-2xl font-display font-extrabold text-amber-400">
+                {result.risk_level}
+              </div>
+            </div>
+            <div>
+              <span className="text-[11px] text-slate-400 uppercase font-semibold">Pass Probability</span>
+              <div className="text-2xl font-display font-extrabold text-sky-400">
+                {(result.pass_probability * 100).toFixed(1)}%
+              </div>
+            </div>
+          </div>
+
+          {/* Natural Language Insights */}
+          <div className="space-y-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300">
+              Explainable AI Key Findings
+            </h4>
+            <ul className="space-y-1.5 text-xs text-slate-300">
+              {result.human_readable_insights.map((insight, idx) => (
+                <li key={idx} className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-brand-400 shrink-0 mt-0.5" />
+                  <span>{insight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Recommendations Summary */}
+          <div className="space-y-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300">
+              Prescribed Action Plan
+            </h4>
+            <div className="space-y-2">
+              {result.recommendations.map((rec, idx) => (
+                <div key={idx} className="p-3 rounded-lg bg-white/[0.02] border border-white/5 text-xs">
+                  <div className="font-semibold text-white">{rec.title} ({rec.priority} Priority)</div>
+                  <div className="text-slate-400 mt-0.5">{rec.description}</div>
+                  <div className="text-emerald-400 font-medium mt-1">Impact: {rec.expected_impact}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-[11px] text-slate-500 border-t border-white/5 pt-4">
+            Generated by Student Performance Prediction AI • Champion Model: {result.champion_regressor} • Version: {result.model_version} • {new Date(result.created_at).toLocaleString()}
+          </div>
+        </div>
+
+        {/* Footer Actions */}
+        <div className="p-4 border-t border-white/10 bg-slate-950/60 flex items-center justify-end gap-3">
+          <button
+            onClick={handleDownloadJSON}
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-200 transition-colors"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download JSON</span>
+          </button>
+          <button
+            onClick={handlePrint}
+            className="flex items-center gap-1.5 px-5 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-brand-600 to-sky-500 text-white shadow-lg shadow-brand-500/20 hover:opacity-90 transition-opacity"
+          >
+            <Printer className="w-4 h-4" />
+            <span>Print Report</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+};

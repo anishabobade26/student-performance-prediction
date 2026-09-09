@@ -1,0 +1,14 @@
+{
+  "version": "v1.0.0",
+  "champion_regressor_name": "Random Forest",
+  "champion_classifier_name": "Logistic Regression",
+  "features_count": 72,
+  "dataset_info": {
+    "math_students": 395,
+    "target_mean": 10.415189873417722,
+    "target_std": 4.5814426109978434,
+    "pass_percentage": 67.09
+  },
+  "last_trained_timestamp": "2026-09-09 22:09:22",
+  "model_directory": "C:\\Users\\harsh\\OneDrive\\Desktop\\My_Projects\\01_Machine_Learning\\01_Student_Performance_Prediction\\backend\\saved_models"
+}

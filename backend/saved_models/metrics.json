@@ -1,0 +1,500 @@
+{
+  "total_samples": 395,
+  "train_samples": 316,
+  "test_samples": 79,
+  "total_features_engineered": 72,
+  "champion_regressor": "Random Forest",
+  "champion_classifier": "Logistic Regression",
+  "regression_leaderboard": [
+    {
+      "model_name": "Random Forest",
+      "train_metrics": {
+        "mae": 0.4325,
+        "rmse": 0.6953,
+        "r2_score": 0.977,
+        "adjusted_r2": 0.9702,
+        "median_absolute_error": 0.2892,
+        "mape": 0.0369
+      },
+      "test_metrics": {
+        "mae": 1.1498,
+        "rmse": 1.9149,
+        "r2_score": 0.8212,
+        "adjusted_r2": -1.3248,
+        "median_absolute_error": 0.6859,
+        "mape": 0.1011
+      },
+      "cv_r2_mean": 0.8903,
+      "cv_r2_std": 0.0323,
+      "fit_time_seconds": 0.4778,
+      "r2_score": 0.8212,
+      "rmse": 1.9149,
+      "mae": 1.1498
+    },
+    {
+      "model_name": "Gradient Boosting",
+      "train_metrics": {
+        "mae": 0.3344,
+        "rmse": 0.4788,
+        "r2_score": 0.9891,
+        "adjusted_r2": 0.9859,
+        "median_absolute_error": 0.2301,
+        "mape": 0.0317
+      },
+      "test_metrics": {
+        "mae": 1.1548,
+        "rmse": 1.9288,
+        "r2_score": 0.8186,
+        "adjusted_r2": -1.3586,
+        "median_absolute_error": 0.6454,
+        "mape": 0.1057
+      },
+      "cv_r2_mean": 0.8871,
+      "cv_r2_std": 0.0251,
+      "fit_time_seconds": 0.2097,
+      "r2_score": 0.8186,
+      "rmse": 1.9288,
+      "mae": 1.1548
+    },
+    {
+      "model_name": "LightGBM",
+      "train_metrics": {
+        "mae": 0.602,
+        "rmse": 0.8915,
+        "r2_score": 0.9622,
+        "adjusted_r2": 0.9509,
+        "median_absolute_error": 0.4114,
+        "mape": 0.0531
+      },
+      "test_metrics": {
+        "mae": 1.2203,
+        "rmse": 1.9598,
+        "r2_score": 0.8127,
+        "adjusted_r2": -1.4351,
+        "median_absolute_error": 0.7462,
+        "mape": 0.1077
+      },
+      "cv_r2_mean": 0.8837,
+      "cv_r2_std": 0.0285,
+      "fit_time_seconds": 3.0572,
+      "r2_score": 0.8127,
+      "rmse": 1.9598,
+      "mae": 1.2203
+    },
+    {
+      "model_name": "XGBoost",
+      "train_metrics": {
+        "mae": 0.3437,
+        "rmse": 0.4951,
+        "r2_score": 0.9883,
+        "adjusted_r2": 0.9849,
+        "median_absolute_error": 0.2279,
+        "mape": 0.0323
+      },
+      "test_metrics": {
+        "mae": 1.2,
+        "rmse": 2.0161,
+        "r2_score": 0.8018,
+        "adjusted_r2": -1.5769,
+        "median_absolute_error": 0.6442,
+        "mape": 0.1095
+      },
+      "cv_r2_mean": 0.8867,
+      "cv_r2_std": 0.0226,
+      "fit_time_seconds": 1.3848,
+      "r2_score": 0.8018,
+      "rmse": 2.0161,
+      "mae": 1.2
+    },
+    {
+      "model_name": "Lasso Regression",
+      "train_metrics": {
+        "mae": 1.0669,
+        "rmse": 1.756,
+        "r2_score": 0.8532,
+        "adjusted_r2": 0.8097,
+        "median_absolute_error": 0.6179,
+        "mape": 0.0766
+      },
+      "test_metrics": {
+        "mae": 1.2686,
+        "rmse": 2.1003,
+        "r2_score": 0.7849,
+        "adjusted_r2": -1.7968,
+        "median_absolute_error": 0.8039,
+        "mape": 0.0989
+      },
+      "cv_r2_mean": 0.8432,
+      "cv_r2_std": 0.0269,
+      "fit_time_seconds": 0.0073,
+      "r2_score": 0.7849,
+      "rmse": 2.1003,
+      "mae": 1.2686
+    },
+    {
+      "model_name": "Extra Trees",
+      "train_metrics": {
+        "mae": 0.2176,
+        "rmse": 0.3345,
+        "r2_score": 0.9947,
+        "adjusted_r2": 0.9931,
+        "median_absolute_error": 0.14,
+        "mape": 0.0212
+      },
+      "test_metrics": {
+        "mae": 1.297,
+        "rmse": 2.2259,
+        "r2_score": 0.7584,
+        "adjusted_r2": -2.1413,
+        "median_absolute_error": 0.7352,
+        "mape": 0.1023
+      },
+      "cv_r2_mean": 0.8683,
+      "cv_r2_std": 0.0458,
+      "fit_time_seconds": 0.2828,
+      "r2_score": 0.7584,
+      "rmse": 2.2259,
+      "mae": 1.297
+    },
+    {
+      "model_name": "Ridge Regression",
+      "train_metrics": {
+        "mae": 1.1576,
+        "rmse": 1.6342,
+        "r2_score": 0.8729,
+        "adjusted_r2": 0.8352,
+        "median_absolute_error": 0.8594,
+        "mape": 0.092
+      },
+      "test_metrics": {
+        "mae": 1.6064,
+        "rmse": 2.3847,
+        "r2_score": 0.7227,
+        "adjusted_r2": -2.6053,
+        "median_absolute_error": 1.2138,
+        "mape": 0.1302
+      },
+      "cv_r2_mean": 0.8273,
+      "cv_r2_std": 0.0235,
+      "fit_time_seconds": 0.0053,
+      "r2_score": 0.7227,
+      "rmse": 2.3847,
+      "mae": 1.6064
+    },
+    {
+      "model_name": "Linear Regression",
+      "train_metrics": {
+        "mae": 1.1605,
+        "rmse": 1.6341,
+        "r2_score": 0.8729,
+        "adjusted_r2": 0.8352,
+        "median_absolute_error": 0.862,
+        "mape": 0.0924
+      },
+      "test_metrics": {
+        "mae": 1.6156,
+        "rmse": 2.3926,
+        "r2_score": 0.7208,
+        "adjusted_r2": -2.6293,
+        "median_absolute_error": 1.2209,
+        "mape": 0.131
+      },
+      "cv_r2_mean": 0.8259,
+      "cv_r2_std": 0.0244,
+      "fit_time_seconds": 0.0179,
+      "r2_score": 0.7208,
+      "rmse": 2.3926,
+      "mae": 1.6156
+    },
+    {
+      "model_name": "Decision Tree",
+      "train_metrics": {
+        "mae": 0.5644,
+        "rmse": 1.0058,
+        "r2_score": 0.9518,
+        "adjusted_r2": 0.9376,
+        "median_absolute_error": 0.2917,
+        "mape": 0.0555
+      },
+      "test_metrics": {
+        "mae": 1.4869,
+        "rmse": 2.7246,
+        "r2_score": 0.638,
+        "adjusted_r2": -3.7062,
+        "median_absolute_error": 0.7667,
+        "mape": 0.1377
+      },
+      "cv_r2_mean": 0.7991,
+      "cv_r2_std": 0.0604,
+      "fit_time_seconds": 0.0095,
+      "r2_score": 0.638,
+      "rmse": 2.7246,
+      "mae": 1.4869
+    }
+  ],
+  "classification_leaderboard": [
+    {
+      "model_name": "Logistic Regression",
+      "metrics": {
+        "accuracy": 0.9114,
+        "precision": 0.9412,
+        "recall": 0.9231,
+        "f1_score": 0.932,
+        "roc_auc": 0.9729,
+        "confusion_matrix": [
+          [
+            24,
+            3
+          ],
+          [
+            4,
+            48
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.8571428571428571,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.8727272727272727,
+            "support": 27.0
+          },
+          "1": {
+            "precision": 0.9411764705882353,
+            "recall": 0.9230769230769231,
+            "f1-score": 0.9320388349514563,
+            "support": 52.0
+          },
+          "accuracy": 0.9113924050632911,
+          "macro avg": {
+            "precision": 0.8991596638655461,
+            "recall": 0.905982905982906,
+            "f1-score": 0.9023830538393645,
+            "support": 79.0
+          },
+          "weighted avg": {
+            "precision": 0.9124561216891819,
+            "recall": 0.9113924050632911,
+            "f1-score": 0.9117677946976215,
+            "support": 79.0
+          }
+        }
+      },
+      "fit_time_seconds": 0.0219,
+      "accuracy": 0.9114,
+      "f1_score": 0.932,
+      "roc_auc": 0.9729
+    },
+    {
+      "model_name": "Gradient Boosting Classifier",
+      "metrics": {
+        "accuracy": 0.9114,
+        "precision": 0.9787,
+        "recall": 0.8846,
+        "f1_score": 0.9293,
+        "roc_auc": 0.9601,
+        "confusion_matrix": [
+          [
+            26,
+            1
+          ],
+          [
+            6,
+            46
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.8125,
+            "recall": 0.9629629629629629,
+            "f1-score": 0.8813559322033898,
+            "support": 27.0
+          },
+          "1": {
+            "precision": 0.9787234042553191,
+            "recall": 0.8846153846153846,
+            "f1-score": 0.9292929292929293,
+            "support": 52.0
+          },
+          "accuracy": 0.9113924050632911,
+          "macro avg": {
+            "precision": 0.8956117021276595,
+            "recall": 0.9237891737891737,
+            "f1-score": 0.9053244307481596,
+            "support": 79.0
+          },
+          "weighted avg": {
+            "precision": 0.9219128736870456,
+            "recall": 0.9113924050632911,
+            "f1-score": 0.912909398642074,
+            "support": 79.0
+          }
+        }
+      },
+      "fit_time_seconds": 0.1666,
+      "accuracy": 0.9114,
+      "f1_score": 0.9293,
+      "roc_auc": 0.9601
+    },
+    {
+      "model_name": "Random Forest Classifier",
+      "metrics": {
+        "accuracy": 0.8987,
+        "precision": 0.94,
+        "recall": 0.9038,
+        "f1_score": 0.9216,
+        "roc_auc": 0.9658,
+        "confusion_matrix": [
+          [
+            24,
+            3
+          ],
+          [
+            5,
+            47
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.8275862068965517,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.8571428571428571,
+            "support": 27.0
+          },
+          "1": {
+            "precision": 0.94,
+            "recall": 0.9038461538461539,
+            "f1-score": 0.9215686274509803,
+            "support": 52.0
+          },
+          "accuracy": 0.8987341772151899,
+          "macro avg": {
+            "precision": 0.8837931034482758,
+            "recall": 0.8963675213675213,
+            "f1-score": 0.8893557422969187,
+            "support": 79.0
+          },
+          "weighted avg": {
+            "precision": 0.9015800960279352,
+            "recall": 0.8987341772151899,
+            "f1-score": 0.8995496932950395,
+            "support": 79.0
+          }
+        }
+      },
+      "fit_time_seconds": 0.1417,
+      "accuracy": 0.8987,
+      "f1_score": 0.9216,
+      "roc_auc": 0.9658
+    },
+    {
+      "model_name": "XGBoost Classifier",
+      "metrics": {
+        "accuracy": 0.8987,
+        "precision": 0.9583,
+        "recall": 0.8846,
+        "f1_score": 0.92,
+        "roc_auc": 0.9587,
+        "confusion_matrix": [
+          [
+            25,
+            2
+          ],
+          [
+            6,
+            46
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.8064516129032258,
+            "recall": 0.9259259259259259,
+            "f1-score": 0.8620689655172413,
+            "support": 27.0
+          },
+          "1": {
+            "precision": 0.9583333333333334,
+            "recall": 0.8846153846153846,
+            "f1-score": 0.92,
+            "support": 52.0
+          },
+          "accuracy": 0.8987341772151899,
+          "macro avg": {
+            "precision": 0.8823924731182795,
+            "recall": 0.9052706552706553,
+            "f1-score": 0.8910344827586207,
+            "support": 79.0
+          },
+          "weighted avg": {
+            "precision": 0.9064243909078535,
+            "recall": 0.8987341772151899,
+            "f1-score": 0.9002007856831079,
+            "support": 79.0
+          }
+        }
+      },
+      "fit_time_seconds": 0.0419,
+      "accuracy": 0.8987,
+      "f1_score": 0.92,
+      "roc_auc": 0.9587
+    },
+    {
+      "model_name": "LightGBM Classifier",
+      "metrics": {
+        "accuracy": 0.8987,
+        "precision": 0.9583,
+        "recall": 0.8846,
+        "f1_score": 0.92,
+        "roc_auc": 0.9623,
+        "confusion_matrix": [
+          [
+            25,
+            2
+          ],
+          [
+            6,
+            46
+          ]
+        ],
+        "classification_report": {
+          "0": {
+            "precision": 0.8064516129032258,
+            "recall": 0.9259259259259259,
+            "f1-score": 0.8620689655172413,
+            "support": 27.0
+          },
+          "1": {
+            "precision": 0.9583333333333334,
+            "recall": 0.8846153846153846,
+            "f1-score": 0.92,
+            "support": 52.0
+          },
+          "accuracy": 0.8987341772151899,
+          "macro avg": {
+            "precision": 0.8823924731182795,
+            "recall": 0.9052706552706553,
+            "f1-score": 0.8910344827586207,
+            "support": 79.0
+          },
+          "weighted avg": {
+            "precision": 0.9064243909078535,
+            "recall": 0.8987341772151899,
+            "f1-score": 0.9002007856831079,
+            "support": 79.0
+          }
+        }
+      },
+      "fit_time_seconds": 0.0246,
+      "accuracy": 0.8987,
+      "f1_score": 0.92,
+      "roc_auc": 0.9623
+    }
+  ],
+  "training_duration_seconds": 10.45,
+  "timestamp": "2026-09-09 22:09:22",
+  "dataset_info": {
+    "math_students": 395,
+    "target_mean": 10.415189873417722,
+    "target_std": 4.5814426109978434,
+    "pass_percentage": 67.09
+  }
+}
